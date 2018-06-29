@@ -50,17 +50,18 @@ public class StandaloneServer {
             ConverterServerBuilder builder = asBuilder(args);
             HttpServer httpServer = builder.build();
             Logger logger = LoggerFactory.getLogger(StandaloneServer.class);
-            try {
+           /* try {*/
                 sayHello(builder, logger);
-                System.out.println("The documents4j server is up and running. Hit the enter key to shut it down...");
-                if (System.in.read() == -1) {
+                System.out.println("The documents4j server is up and running.");
+               /* if (System.in.read() == -1) {
                     logger.warn("Console read terminated without receiving user input");
                 }
-                sayGoodbye(builder, logger);
-            } finally {
+                sayGoodbye(builder, logger);*/
+          /*  } finally {
                 httpServer.shutdownNow();
             }
-            System.out.println("Shut down successful. Goodbye!");
+            System.out.println("Shut down successful. Goodbye!");*/
+
         } catch (Exception e) {
             LoggerFactory.getLogger(StandaloneServer.class).error("The documents4j server terminated with an unexpected error", e);
             System.err.println(String.format("Error: %s", e.getMessage()));
